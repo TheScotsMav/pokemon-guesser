@@ -31,9 +31,7 @@ const GET_POKEMON = gql(/* GraphQL */ `
 `);
 
 export async function aTestAction(formData: FormData) {
-    const pokedexNumber = parseInt(
-        formData.get("pokedexNumber")?.toString() || ""
-    );
+    const pokedexNumber = parseInt(formData.get("pokedexNumber")!.toString());
     const variables: GetPokemonQueryVariables = {
         where: {
             id: {
