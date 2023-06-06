@@ -137,7 +137,7 @@ export default async function Gen1Page() {
                         {pokemon.name.charAt(0).toUpperCase() +
                             pokemon.name.substring(1)}
                     </CardTitle>
-                    <CardDescription>What type is it?</CardDescription>
+                    <CardDescription>Which type is it?</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <Image
