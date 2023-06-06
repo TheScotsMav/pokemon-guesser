@@ -16,6 +16,7 @@
         "@apollo/experimental-nextjs-app-support": "^0.1.0",
         "@graphql-codegen/cli": "^4.0.1",
         "@graphql-codegen/client-preset": "^4.0.0",
+        "@graphql-typed-document-node/core": "^3.2.0",
         "@hookform/resolvers": "^3.1.0",
         "@radix-ui/react-label": "^2.0.2",
         "@radix-ui/react-slot": "^1.0.2",
