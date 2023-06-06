@@ -41,7 +41,7 @@ const GET_POKEMON = gql(/* GraphQL */ `
 
 const imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites";
 
-export const pokemonTypes = [
+const pokemonTypes = [
     "Normal",
     "Fire",
     "Water",
