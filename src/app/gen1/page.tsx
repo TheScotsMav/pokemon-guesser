@@ -129,7 +129,7 @@ export default async function Gen1Page() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center gap-3 p-24">
-            <h1 className="text-6xl font-bold text-center">Gen1</h1>
+            <h1 className="text-6xl font-bold text-center">Gen 1</h1>
             <Card>
                 <CardHeader>
                     <CardTitle>{pokemon.name}</CardTitle>
