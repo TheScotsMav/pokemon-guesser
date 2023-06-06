@@ -98,7 +98,7 @@ export default async function Gen1Page() {
 
     let pokemonQuery = (await redis.get(
         `pokemon-types-cache-${currentPokedexNumber}}`
-    )) as GetPokemonQuery;
+    )) as GetPokemonQuery | undefined;
 
     if (!pokemonQuery) {
         const { data } = await getClient().query({
@@ -115,6 +115,7 @@ export default async function Gen1Page() {
                 ex: 60 * 10,
             }
         );
+        if (!pokemonQuery) return <div>loading...</div>;
     }
 
     const { pokemon_v2_pokemon: pokemonArray } = pokemonQuery;
@@ -132,7 +133,10 @@ export default async function Gen1Page() {
             <h1 className="text-6xl font-bold text-center">Gen 1</h1>
             <Card>
                 <CardHeader>
-                    <CardTitle>{pokemon.name}</CardTitle>
+                    <CardTitle>
+                        {pokemon.name.charAt(0).toUpperCase() +
+                            pokemon.name.substring(1)}
+                    </CardTitle>
                     <CardDescription>What type is it?</CardDescription>
                 </CardHeader>
                 <CardContent>
