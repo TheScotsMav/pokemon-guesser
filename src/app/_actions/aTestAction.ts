@@ -56,7 +56,7 @@ export async function aTestAction(formData: FormData) {
             `pokemon-types-cache-${pokedexNumber}}`,
             getPokemonQuery,
             {
-                ex: 60,
+                ex: 60 * 10,
             }
         );
     }

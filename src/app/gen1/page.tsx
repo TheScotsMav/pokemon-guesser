@@ -112,7 +112,7 @@ export default async function Gen1Page() {
             `pokemon-types-cache-${currentPokedexNumber}}`,
             pokemonQuery,
             {
-                ex: 60,
+                ex: 60 * 10,
             }
         );
     }
