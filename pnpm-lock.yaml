@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -90,11 +90,11 @@ dependencies:
     specifier: ^1.13.0
     version: 1.13.0
   tailwindcss:
-    specifier: 3.3.2
-    version: 3.3.2
+    specifier: 3.3.3
+    version: 3.3.3
   tailwindcss-animate:
     specifier: ^1.0.5
-    version: 1.0.5(tailwindcss@3.3.2)
+    version: 1.0.5(tailwindcss@3.3.3)
   typescript:
     specifier: 5.1.3
     version: 5.1.3
@@ -5270,16 +5270,16 @@ packages:
     resolution: {integrity: sha512-mUTmDbcU+IhOvJ0c42eLQ/nRkvolTqfpVaVQRSxfJAv9TabS6Y2zW/1wKpKLdKzyL3Gh8j6NTLl6MWNmvOM6kA==}
     dev: false
 
-  /tailwindcss-animate@1.0.5(tailwindcss@3.3.2):
+  /tailwindcss-animate@1.0.5(tailwindcss@3.3.3):
     resolution: {integrity: sha512-UU3qrOJ4lFQABY+MVADmBm+0KW3xZyhMdRvejwtXqYOL7YjHYxmuREFAZdmVG5LPe5E9CAst846SLC4j5I3dcw==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
     dev: false
 
-  /tailwindcss@3.3.2:
-    resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
+  /tailwindcss@3.3.3:
+    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -5303,7 +5303,6 @@ packages:
       postcss-load-config: 4.0.1(postcss@8.4.24)
       postcss-nested: 6.0.1(postcss@8.4.24)
       postcss-selector-parser: 6.0.13
-      postcss-value-parser: 4.2.0
       resolve: 1.22.2
       sucrase: 3.32.0
     transitivePeerDependencies:
