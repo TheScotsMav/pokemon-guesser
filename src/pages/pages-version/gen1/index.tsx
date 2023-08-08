@@ -1,3 +1,4 @@
+import { Button } from "@/app/_components/ui/button";
 import {
     Card,
     CardContent,
@@ -5,17 +6,14 @@ import {
     CardHeader,
     CardTitle,
 } from "@/app/_components/ui/card";
-import { cookies } from "next/headers";
+import { Suspense } from "react";
 import Image from "next/image";
-import { getClient, redis } from "@/lib/client";
-import { gql } from "@/__generated__/gql";
-import type {
+import {
     GetPokemonQuery,
     GetPokemonQueryVariables,
 } from "@/__generated__/graphql";
-import { Button } from "../_components/ui/button";
-import { revalidatePath } from "next/cache";
-import { Suspense } from "react";
+import { client } from "@/lib/pages-client";
+import { gql } from "@/__generated__";
 
 const GET_POKEMON = gql(/* GraphQL */ `
     query getPokemon($where: pokemon_v2_pokemon_bool_exp) {
@@ -63,10 +61,7 @@ const pokemonTypes = [
     "Fairy",
 ];
 
-//export const runtime = "experimental-edge";
-
 export default async function Gen1Page() {
-    const isWrong = cookies().has("isWrong");
     let currentPokedexNumber = Math.floor(Math.random() * 151 + 1);
 
     const variables: GetPokemonQueryVariables = {
@@ -77,25 +72,16 @@ export default async function Gen1Page() {
         },
     };
 
-    let pokemonQuery = (await redis.get(
-        `pokemon-types-cache-${currentPokedexNumber}}`
-    )) as GetPokemonQuery | undefined;
+    let pokemonQuery = undefined;
 
     if (!pokemonQuery) {
-        const { data } = await getClient().query({
+        const { data } = await client.query({
             query: GET_POKEMON,
             variables,
         });
         if (data) {
             pokemonQuery = data;
         }
-        await redis.set(
-            `pokemon-types-cache-${currentPokedexNumber}}`,
-            pokemonQuery,
-            {
-                ex: 60 * 10,
-            }
-        );
         if (!pokemonQuery) return <div>loading...</div>;
     }
 
@@ -110,7 +96,6 @@ export default async function Gen1Page() {
     ).front_default.replace("media", "master");
 
     async function aTestAction(formData: FormData) {
-        "use server";
         const types =
             pokemonQuery!.pokemon_v2_pokemon[0]!.pokemon_v2_pokemontypes_aggregate.nodes.map(
                 (node) => {
@@ -128,19 +113,19 @@ export default async function Gen1Page() {
         const chosenType = formData.get("typeSelect")!.toString();
         console.log("chosenType", chosenType);
         if (!types.includes(chosenType)) {
-            cookies().set("isWrong", "true");
+            //cookies().set("isWrong", "true");
             //cookies().set("currentPokemon", currentPokedexNumber.toString());
         }
 
         //cookies().delete("isWrong");
         //cookies().delete("currentPokemon");
-        return revalidatePath("/gen1");
     }
-
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center gap-3 p-24">
+        <div className="flex min-h-screen flex-col items-center justify-center gap-3 p-24">
             <h1 className="text-6xl font-bold text-center">Gen 1</h1>
-            {isWrong && <p className="text-red-500">Wrong Type!</p>}
+            {
+                //isWrong && <p className="text-red-500">Wrong Type!</p>
+            }
             <Card>
                 <CardHeader>
                     <CardTitle>
@@ -166,7 +151,7 @@ export default async function Gen1Page() {
                         />
                     </Suspense>
                     <form
-                        action={(e) => aTestAction(e)}
+                        action={aTestAction}
                         className="flex flex-col space-y-2"
                     >
                         <select
@@ -189,6 +174,6 @@ export default async function Gen1Page() {
                     </form>
                 </CardContent>
             </Card>
-        </main>
+        </div>
     );
 }

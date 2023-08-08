@@ -98,6 +98,11 @@ dependencies:
     specifier: ^3.21.4
     version: 3.21.4
 
+devDependencies:
+  '@graphql-codegen/client-preset-swc-plugin':
+    specifier: ^0.2.0
+    version: 0.2.0
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
@@ -870,6 +875,10 @@ packages:
       - supports-color
       - utf-8-validate
     dev: false
+
+  /@graphql-codegen/client-preset-swc-plugin@0.2.0:
+    resolution: {integrity: sha512-wibvCKuB+pP1ggNzZnkMLQgfyr0l+71kZsfK9M9GxxV8kaFGypbT3eN2XP4U8wH35GTaceLDg9jTg2JSUpcWdg==}
+    dev: true
 
   /@graphql-codegen/client-preset@4.0.0(graphql@16.6.0):
     resolution: {integrity: sha512-A96Vc+ZHMoBTO7bH/I/iIqCBsDiXblKqhyMQsSfq79Muvtmhjx4E9Xt4s++/zpBbe4M+46EYLlde2ZIrymSqDw==}
