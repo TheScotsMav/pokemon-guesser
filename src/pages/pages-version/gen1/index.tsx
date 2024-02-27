@@ -72,7 +72,7 @@ export default async function Gen1Page() {
         },
     };
 
-    let pokemonQuery = undefined;
+    let pokemonQuery: GetPokemonQuery | undefined = undefined;
 
     if (!pokemonQuery) {
         const { data } = await client.query({
@@ -96,6 +96,7 @@ export default async function Gen1Page() {
     ).front_default.replace("media", "master");
 
     async function aTestAction(formData: FormData) {
+        "use server";
         const types =
             pokemonQuery!.pokemon_v2_pokemon[0]!.pokemon_v2_pokemontypes_aggregate.nodes.map(
                 (node) => {

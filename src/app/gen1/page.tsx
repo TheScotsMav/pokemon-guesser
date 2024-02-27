@@ -66,7 +66,7 @@ const pokemonTypes = [
 //export const runtime = "experimental-edge";
 
 export default async function Gen1Page() {
-    const isWrong = cookies().has("isWrong");
+    const isWrong = true;
     let currentPokedexNumber = Math.floor(Math.random() * 151 + 1);
 
     const variables: GetPokemonQueryVariables = {
@@ -166,7 +166,7 @@ export default async function Gen1Page() {
                         />
                     </Suspense>
                     <form
-                        action={(e) => aTestAction(e)}
+                        action={aTestAction}
                         className="flex flex-col space-y-2"
                     >
                         <select
