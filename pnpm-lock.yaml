@@ -87,8 +87,8 @@ dependencies:
     specifier: ^7.50.1
     version: 7.51.4(react@18.3.1)
   tailwind-merge:
-    specifier: ^1.14.0
-    version: 1.14.0
+    specifier: ^2.0.0
+    version: 2.6.0
   tailwindcss:
     specifier: 3.4.17
     version: 3.4.17
@@ -5348,8 +5348,8 @@ packages:
       whatwg-mimetype: 4.0.0
     dev: false
 
-  /tailwind-merge@1.14.0:
-    resolution: {integrity: sha512-3mFKyCo/MBcgyOTlrY8T7odzZFx+w+qKSMAmdFzRvqBfLlSigU6TZnlFHK0lkMwj9Bj8OYU+9yW9lmGuS0QEnQ==}
+  /tailwind-merge@2.6.0:
+    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
     dev: false
 
   /tailwindcss-animate@1.0.7(tailwindcss@3.4.17):
