@@ -31,7 +31,7 @@ dependencies:
     version: 1.0.2(@types/react@18.3.18)(react@18.3.1)
   '@t3-oss/env-nextjs':
     specifier: ^0.4.0
-    version: 0.4.1(typescript@5.7.3)(zod@3.23.8)
+    version: 0.4.1(typescript@5.7.3)(zod@3.24.1)
   '@types/node':
     specifier: 20.17.14
     version: 20.17.14
@@ -100,7 +100,7 @@ dependencies:
     version: 5.7.3
   zod:
     specifier: ^3.22.4
-    version: 3.23.8
+    version: 3.24.1
 
 devDependencies:
   '@graphql-codegen/client-preset-swc-plugin':
@@ -1712,25 +1712,25 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /@t3-oss/env-core@0.4.1(typescript@5.7.3)(zod@3.23.8):
+  /@t3-oss/env-core@0.4.1(typescript@5.7.3)(zod@3.24.1):
     resolution: {integrity: sha512-JZI8vxlHwtiZO7OYS3qSX9Ngt7UcdqsugLwhBwx7UVi5wp1PtRo2tzMyNoBEGbfHdmkd2QU9IbvYjqtaLUA7TQ==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
       typescript: 5.7.3
-      zod: 3.23.8
+      zod: 3.24.1
     dev: false
 
-  /@t3-oss/env-nextjs@0.4.1(typescript@5.7.3)(zod@3.23.8):
+  /@t3-oss/env-nextjs@0.4.1(typescript@5.7.3)(zod@3.24.1):
     resolution: {integrity: sha512-lDbewJvZwOW7bFwHzdKtAH4+YcVTvGU7UEJfHwlb1RqVe9ejPrKn6ax2OGv/nFji1JXGKecKYHz3Xkpru6TFbw==}
     peerDependencies:
       typescript: '>=4.7.2'
       zod: ^3.0.0
     dependencies:
-      '@t3-oss/env-core': 0.4.1(typescript@5.7.3)(zod@3.23.8)
+      '@t3-oss/env-core': 0.4.1(typescript@5.7.3)(zod@3.24.1)
       typescript: 5.7.3
-      zod: 3.23.8
+      zod: 3.24.1
     dev: false
 
   /@types/js-yaml@4.0.9:
@@ -5840,6 +5840,6 @@ packages:
     resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
     dev: false
 
-  /zod@3.23.8:
-    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+  /zod@3.24.1:
+    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
     dev: false
